@@ -2,13 +2,11 @@
 
 ### Task
 
-You'll send requests to the Guardian API to get Headline and Article data and to the Aylien API to summarise text.
+You'll test-drive a single page application in React that send requests to the Guardian API to get Headline and Article data and to the Aylien API to summarise text. 
 
 ### Serving your app
 
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+You'll use React's toolchain to take care of serving your HTML, CSS and JavaScript files.  
 
 ## User Stories
 
