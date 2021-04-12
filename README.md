@@ -1,3 +1,112 @@
+# News Summary Challenge
+
+### Task
+
+You'll send requests to the Guardian API to get Headline and Article data and to the Aylien API to summarise text.
+
+### Serving your app
+
+You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  
+
+> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+
+## User Stories
+
+Some of these stories will need decomposing if they seem too large.
+
+### Standard
+```
+As a busy politician
+So I know what the big stories of the day are
+I can see all of today's headlines in one place
+```
+
+```
+As a busy politician
+So that I have something nice to look at
+I can see a relevant picture to illustrate each news article when I browse headlines
+```
+
+```
+As a busy politician
+So that I can get an in depth understanding of a very important story
+I can click a news headline to see a summary and a photo of the news article
+```
+
+### Extended
+
+```
+As a busy politician
+So I can get a few more details about an important story
+I can see click a news article summary title which links to the original article
+```
+
+```
+As a busy politician
+Just in case my laptop breaks
+I can read the site comfortably on my phone
+```
+
+```
+As a busy politician
+To make my news reading more fun
+I can see whizzy animations in the app
+```
+
+## Mockups
+
+### Headlines page
+
+![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+
+### Article summary page
+
+![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+
+## API
+
+### API request rate limits and stubbing
+
+The Guardian and Aylien text summarisation APIs are severely rate-limited.
+
+**Please stub your tests so you don't exceed the daily limit.  Otherwise, all requests will be rejected and your app will stop working!**
+
+### Guardian API example
+
+**Please stub your tests to avoid exceeding the API rate limit**
+
+If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
+
+```sh
+# Search endpoint
+curl "https://content.guardianapis.com/search?q=coronavirus&show-fields=body&api-key=API_KEY"
+```
+```sh
+# Single Item endpoint
+curl "https://content.guardianapis.com/world/2021/mar/22/link-between-diabetes-and-coronavirus-infections?show-fields=body&api-key=API_KEY"
+```
+
+### Aylien text summarisation API example
+
+**Please stub your tests to avoid exceeding the API rate limit**
+
+If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
+
+```
+curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
+  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
+  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
+```
+
+## Resources
+
+* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
+* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
+* cURL [man page](https://curl.haxx.se/docs/manpage.html)
+* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,43 +137,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
