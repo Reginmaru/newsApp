@@ -25,13 +25,13 @@ So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 
+### Extended
+
 ```
 As a busy politician
 So that I can get an in depth understanding of a very important story
 I can click a news headline to see a summary and a photo of the news article
 ```
-
-### Extended
 
 ```
 As a busy politician
